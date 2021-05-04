@@ -26,7 +26,7 @@ app.get("/", function(req, res) {
 
 
   var currentDay = today.getDay();
-  var day = "";
+  var day = today.toLocaleDateString("en-US");
 
   res.render("list", {
     listTitle: day,

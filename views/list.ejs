@@ -11,17 +11,26 @@
 
  <body>
 
-   <% for (var i=0; i<newListItems.length; i++) { %>
-   <div class="item">
-     <input type="checkbox">
-     <p> <%= newListItems[i] %> </p>
+   <div class="box" id="heading">
+       <h1><%= listTitle %></h1>
    </div>
-   <% } %>
-   <form class="item" action="/" method="post">
-     <!-- when submit button clicked, form makes post request to the home route and post "newItem" -->
-     <button type="submit" name="list">+</button>
-     <input type="text" name="newItem" placeholder="New Item" autocomplete="off">
-   </form>
+
+   <div class="box">
+       <% for (var i=0; i<newListItems.length; i++) { %>
+       <div class="item">
+           <input type="checkbox">
+           <p> <%= newListItems[i] %> </p>
+       </div>
+       <% } %>
+       <!-- 2nd for loop loops through the entire lenght of the array and renders a new li for each item inside the array -->
+
+       <form class="item" action="/" method="post">
+           <!-- when submit button clicked, form makes post request to the home route and post "newItem" -->
+           <input type="text" name="newItem" placeholder="New Item" autocomplete="off">
+           <button type="submit" name="list" value=<%= listTitle%>>+</button>
+       </form>
+       <!-- 3rd when the user adds a new item, it gets saved as "newItem" and we trigger a post request to the home route -->
+   </div>
  </body>
 
  </html>
