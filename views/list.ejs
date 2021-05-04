@@ -1,7 +1,22 @@
-<!DOCTYPE html>
-<html lang="en">
-<head></head>
-<body>
-  <h1>Heyy!! Its a <%= kindOfDay%></h1> 
-</body>
-</html>
+ <!DOCTYPE html>
+ <html lang="en">
+
+ <head>
+ </head>
+
+ <body>
+
+   <% for (var i=0; i<newListItems.length; i++) { %>
+   <div class="item">
+     <input type="checkbox">
+     <p> <%= newListItems[i] %> </p>
+   </div>
+   <% } %>
+   <form class="item" action="/" method="post">
+     <!-- when submit button clicked, form makes post request to the home route and post "newItem" -->
+     <button type="submit" name="list">+</button>
+     <input type="text" name="newItem" placeholder="New Item" autocomplete="off">
+   </form>
+ </body>
+
+ </html>
