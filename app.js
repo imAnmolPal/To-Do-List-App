@@ -15,6 +15,9 @@ app.use(
   })
 );
 
+
+app.use(express.static("public")); // for express to serve up the public folder as a static resource
+
 app.get("/", function(req, res) {
 
 
